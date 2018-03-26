@@ -6,7 +6,7 @@ namespace Data
     public class Role
     {
         public int roleId { get; set; }
-        public string name { get; set; }
+        public string roleName { get; set; }
         public int level { get; set; }
         public int exp { get; set; }
 
@@ -24,7 +24,7 @@ namespace Data
         public Role(AsyncSocket.DataBase data)
         {
             roleId = int.Parse(data.list[0]);
-            name = data.list[1];
+            roleName = data.list[1];
             level = int.Parse(data.list[2]);
             exp = int.Parse(data.list[3]);
 

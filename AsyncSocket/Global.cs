@@ -14,7 +14,7 @@ namespace AsyncSocket
             {
                 if (logger == null)
                 {
-                    logger = LogManager.GetLogger(LogType.ConsoleWriteLine);
+                    logger = LogManager.Instance.Logger;
                 }
                 return logger;
             }
@@ -27,7 +27,7 @@ namespace AsyncSocket
         /// <param name="type">日志类型</param>
         public static void InitLogger(LogType type)
         {
-            logger = LogManager.GetLogger(type);
+            Logger.SetLogType(LogType.ConsoleWriteLine);
         }
     }
 
@@ -39,5 +39,6 @@ namespace AsyncSocket
         Register = 1001,               // 注册
         EnterGame = 1002,           // 进入游戏
         GetRole = 1003,                // 获取角色信息
+        CreateRole = 1004,            // 创建角色
     }
 }

@@ -117,13 +117,23 @@ namespace GameServer
             Role role;
             if (!roleDic.TryGetValue(roleId, out role))
             {
-                string where = string.Format("roleId = '{0}'", roleId);
-                role = MySqlTemplate.SELECT<Role>(new string[] { "role" }, new string[] { "*" }, where)[0];
+                string where = string.Format("roleId = {0}", roleId);
+                var roles = MySqlTemplate.SELECT<Role>(new string[] { "role" }, new string[] { "*" }, where);
+                if (roles.Count > 0) role = roles[0];
 
                 if (role != null)
                     roleDic[role.roleId] = role;
             }
             return role;
+        }
+        public bool RoleIsExisting(string roleName)
+        {
+            string where = string.Format("roleName = '{0}'", roleName);
+            var roles = MySqlTemplate.SELECT<Role>(new string[] { "role" }, new string[] { "*" }, where);
+            if (roles.Count < 1)
+                return false;
+            
+            return roles[0] != null;
         }
     }
 }

@@ -4,10 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Net.Sockets;
 
-using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-
 namespace AsyncSocket
 {
     public class SocketBase
@@ -77,12 +73,6 @@ namespace AsyncSocket
                 SendBuffer.Write(db);
                 tcpClient.Client.Send(SendBuffer.Buffer, 0, SendBuffer.DataCount, SocketFlags.None);
             }
-        }
-
-        [Serializable]
-        private class DB
-        {
-            public int i;
         }
     }
 }

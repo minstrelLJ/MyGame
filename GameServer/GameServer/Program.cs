@@ -21,6 +21,7 @@ namespace GameServer
             Global.InitLogger(LogType.ConsoleWriteLine);
             logger = Global.Logger;
 
+            ConfigManager.Instance.Init();
             NetworkManager.Instance.Init();
             ServerManager.Instance.Init();
             DataManager.Instance.Init();

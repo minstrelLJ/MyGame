@@ -11,50 +11,46 @@ namespace Tools
 
     class Log : ILog
     {
-        public ShowLog debug;
-        public ShowLog warning;
-        public ShowLog error; 
+        public ShowLog EventDebug;
+        public ShowLog EventWarning;
+        public ShowLog EventError;
+
+        private LogType logType { get; set; }
 
         public Log(LogType type)
         {
-            switch (type)
-            {
-                case LogType.ConsoleWriteLine:
-                    debug = CWDebug;
-                    warning = CWWarning;
-                    error = CWError;
-                    break;
-
-                case LogType.Text:
-                    debug = Set2TextDebug;
-                    warning = Set2TextWarning;
-                    error = Set2TextError;
-                    break;
-
-                case LogType.Custom:
-                    break;
-            }
+            logType = type;
+        }
+        public void SetLogType(LogType type)
+        {
+            logType = type;
         }
 
         public void Debug(string format, params object[] args)
         {
-            if (debug != null)
+            switch (logType)
             {
-                debug(format, args);
+                case LogType.ConsoleWriteLine: CWDebug(format, args); break;
+                case LogType.Text: Set2TextDebug(format, args); break;
+                case LogType.Custom: EventDebug(format, args); break;
             }
         }
         public void Warning(string format, params object[] args)
         {
-            if (warning != null)
+            switch (logType)
             {
-                warning(format, args);
+                case LogType.ConsoleWriteLine: CWWarning(format, args); break;
+                case LogType.Text: Set2TextWarning(format, args); break;
+                case LogType.Custom: EventWarning(format, args); break;
             }
         }
         public void Error(string format, params object[] args)
         {
-            if (error != null)
+            switch (logType)
             {
-                error(format, args);
+                case LogType.ConsoleWriteLine: CWError(format, args); break;
+                case LogType.Text: Set2TextError(format, args); break;
+                case LogType.Custom: EventError(format, args); break;
             }
         }
 

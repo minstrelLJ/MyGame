@@ -8,28 +8,28 @@ namespace Tools
     /// <summary>
     /// 日志管理器
     /// </summary>
-    public class LogManager
+    public class LogManager : Singleton<LogManager>
     {
-        public static ILog Logger
+        public ILog Logger 
         {
-            get
+            get 
             {
                 if (logger == null)
-                {
-                    logger = LogManager.GetLogger(LogType.ConsoleWriteLine);
-                }
+                    logger = new Log(LogType.ConsoleWriteLine);
+                
                 return logger;
             }
+            set { logger = value; }
         }
-        private static ILog logger;
+        private ILog logger;
 
         /// <summary>
-        /// 获取日志实体
+        /// 设置日志类型
         /// </summary>
-        /// <returns></returns>
-        public static ILog GetLogger(LogType type)
+        /// <param name="type">类型</param>
+        public void SetLogType(LogType type)
         {
-            return new Log(type);
+            Logger.SetLogType(type);
         }
     }
 

@@ -99,20 +99,25 @@ public class ExcelUtility
 		//准备一个列表存储整个表的数据
 		List<Dictionary<string, object>> table = new List<Dictionary<string, object>> ();
 
-		//读取数据
-		for (int i = 1; i < rowCount; i++) {
+        for (int i = 2; i < rowCount; i++) {
 			//准备一个字典存储每一行的数据
 			Dictionary<string, object> row = new Dictionary<string, object> ();
 			for (int j = 0; j < colCount; j++) {
-				//读取第1行数据作为表头字段
-				string field = mSheet.Rows [0] [j].ToString ();
-				//Key-Value对应
-				row [field] = mSheet.Rows [i] [j];
+                //读取第1行数据作为数据类型字段
+                string type = mSheet.Rows[0][j].ToString();
+                //读取第2行数据作为表头字段
+                string field = mSheet.Rows[1][j].ToString();
+                switch (type)
+                {
+                    case "INT": row[field] = Convert.ToInt32(mSheet.Rows[i][j]); break;
+                    case "STRING": row[field] = mSheet.Rows[i][j].ToString();break;
+                    case "FLOAT": row[field] = mSheet.Rows[i][j]; break;
+                }
 			}
 
-			//添加到表数据中
-			table.Add (row);
-		}
+            //添加到表数据中
+            table.Add(row);
+        }
 
 		//生成Json字符串
 		string json = JsonConvert.SerializeObject (table, Newtonsoft.Json.Formatting.Indented);

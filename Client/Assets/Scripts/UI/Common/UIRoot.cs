@@ -277,9 +277,11 @@ public class UIRoot : MonoBehaviour
 
         switch (page)
         {
-            case Page.GameMainPage: path = "GameMainPage"; break;
-            case Page.LoginPage: path = "LoginPage"; break;
-            case Page.RegisterPage: path = "RegisterPage"; break;
+            case Page.GameMain: path = "GameMain"; break;
+            case Page.Login: path = "Login"; break;
+            case Page.Register: path = "Register"; break;
+            case Page.SelectRole: path = "SelectRole"; break;
+            case Page.CreateRole: path = "CreateRole"; break;
 
             default: Debug.LogError("未知类型:" + page); break;
         }
@@ -290,7 +292,9 @@ public class UIRoot : MonoBehaviour
 public enum Page
 {
     None,
-    GameMainPage,
-    LoginPage,
-    RegisterPage,
+    GameMain,
+    Login,
+    Register,
+    SelectRole,
+    CreateRole,
 }

@@ -9,7 +9,7 @@ public class StartGame : MonoBehaviour {
         Init();
         CF.ConnectServer();
 
-        UIRoot.ShowPage(Page.GameMainPage);
+        UIRoot.ShowPage(Page.GameMain);
 	}
 	
 	void Update () 

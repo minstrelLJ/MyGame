@@ -106,16 +106,17 @@
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Net\NetworkManager.cs" />
     <Compile Include="Assets\Scripts\Net\NetworkPackage.cs" />
-    <Compile Include="Assets\Scripts\Net\ParseCMD.cs" />
     <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\UI\Common\ComButton.cs" />
     <Compile Include="Assets\Scripts\UI\Common\ComInput.cs" />
     <Compile Include="Assets\Scripts\UI\Common\UIBase.cs" />
     <Compile Include="Assets\Scripts\UI\Common\UIRoot.cs" />
+    <Compile Include="Assets\Scripts\UI\CreateRole.cs" />
     <Compile Include="Assets\Scripts\UI\GameMainPage.cs" />
     <Compile Include="Assets\Scripts\UI\HintMsg.cs" />
     <Compile Include="Assets\Scripts\UI\LoginPage.cs" />
     <Compile Include="Assets\Scripts\UI\RegisterPage.cs" />
+    <Compile Include="Assets\Scripts\UI\SelectRole.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

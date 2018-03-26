@@ -7,7 +7,9 @@ using AsyncSocket;
 
 public class NetworkManager : UnitySingleton<NetworkManager>
 {
-     public static int PacketSize = 32 * 1024;
+    #region Init
+
+    public static int PacketSize = 32 * 1024;
      public static SocketClient Socket;
      public static string host;
      public static int port;
@@ -45,15 +47,17 @@ public class NetworkManager : UnitySingleton<NetworkManager>
             case CMD.Login:
             case CMD.Register:
             case CMD.EnterGame:
+            case CMD.GetRole:
+            case CMD.CreateRole:
                 Action<DataBase> action = null;
                 if (sendDic.TryGetValue(data.cmd, out action))
                 {
                     action(data);
                 }
                 return;
-        }
 
-        ParseCMD.Parse(data);
+            default: Debug.LogError("未知 CMD " + data.cmd); break;
+        }
     }
     private void SendMessage(DataBase data, Action<DataBase> ac)
     {
@@ -81,6 +85,8 @@ public class NetworkManager : UnitySingleton<NetworkManager>
         Socket.Close();
     }
 
+    #endregion Init
+
     #region SendMsg
 
     public void SendRegister(Action<DataBase> ac, string acc, string pw)
@@ -97,10 +103,23 @@ public class NetworkManager : UnitySingleton<NetworkManager>
         db.Add(pw);
         SendMessage(db, ac);
     }
-    public void SendEnter(Action<DataBase> ac, int userId)
+    public void SendEnter(Action<DataBase> ac)
     {
         DataBase db = DataPool.Instance.Pop(CMD.EnterGame);
-        db.Add(userId);
+        db.Add(GameManager.Instance.userId);
+        SendMessage(db, ac);
+    }
+    public void SendGetRole(Action<DataBase> ac)
+    {
+        DataBase db = DataPool.Instance.Pop(CMD.GetRole);
+        db.Add(GameManager.Instance.userId);
+        SendMessage(db, ac);
+    }
+    public void SendCreateRole(Action<DataBase> ac, string roleName)
+    {
+        DataBase db = DataPool.Instance.Pop(CMD.CreateRole);
+        db.Add(GameManager.Instance.userId);
+        db.Add(roleName);
         SendMessage(db, ac);
     }
 

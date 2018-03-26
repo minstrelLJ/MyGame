@@ -8,3 +8,16 @@ E:\MyGame\Data\bin\Debug\Tools.dll
 E:\MyGame\Data\bin\Debug\UnityEngine.dll
 E:\MyGame\Data\bin\Debug\AsyncSocket.pdb
 E:\MyGame\Data\bin\Debug\Tools.pdb
+E:\Git\MyGame\Data\bin\Debug\Data.dll
+E:\Git\MyGame\Data\bin\Debug\Data.pdb
+E:\Git\MyGame\Data\bin\Debug\AsyncSocket.dll
+E:\Git\MyGame\Data\bin\Debug\Tools.dll
+E:\Git\MyGame\Data\bin\Debug\UnityEngine.dll
+E:\Git\MyGame\Data\bin\Debug\AsyncSocket.pdb
+E:\Git\MyGame\Data\bin\Debug\Tools.pdb
+E:\Git\MyGame\Data\obj\Debug\Data.dll
+E:\Git\MyGame\Data\obj\Debug\Data.pdb
+E:\Git\MyGame\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+E:\Git\MyGame\Data\bin\Debug\Newtonsoft.Json.dll
+E:\Git\MyGame\Data\bin\Debug\Common.dll
+E:\Git\MyGame\Data\bin\Debug\Common.pdb

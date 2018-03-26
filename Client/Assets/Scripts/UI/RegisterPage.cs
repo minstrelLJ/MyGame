@@ -36,7 +36,7 @@ public class RegisterPage : UIBase
 
         clickMaskAction = () =>
         {
-            UIRoot.ShowPage(Page.LoginPage);
+            UIRoot.ShowPage(Page.Login);
             Hide();
         };
     }
@@ -65,7 +65,7 @@ public class RegisterPage : UIBase
 
         NetworkManager.Instance.SendRegister((data)=>
         {
-            UIRoot.ShowPage(Page.LoginPage);
+            UIRoot.ShowPage(Page.Login);
             Hide();
         },inId.text, inPw1.text);
     }

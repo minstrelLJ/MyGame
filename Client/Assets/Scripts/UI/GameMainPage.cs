@@ -14,24 +14,15 @@ public class GameMainPage : UIBase
     public override void Init()
     {
         btnEnterGame = this.transform.Find("Button (1)").GetComponent<ComButton>();
-        btnEnterGame.text = "进入游戏";
+        btnEnterGame.text = "开始游戏";
         btnEnterGame.Event(() => 
         {
             Debug.Log("btnEnterGame");
 
             NetworkManager.Instance.SendEnter((data) => 
             {
-                if (int.Parse(data.list[0]) == 0)
-                {
-
-                }
-                else
-                {
-                    GameManager.Instance.role = new Role(data);
-                }
-            }, GameManager.Instance.userId);
-
-            Debug.Log("user id " + GameManager.Instance.userId);
+                UIRoot.ShowPage(Page.SelectRole);
+            });
         });
 
         btnAccountChange = this.transform.Find("Button (2)").GetComponent<ComButton>();
@@ -39,7 +30,7 @@ public class GameMainPage : UIBase
         btnAccountChange.Event(() =>
         {
             Debug.Log("btnAccountChange");
-            UIRoot.ShowPage(Page.LoginPage);
+            UIRoot.ShowPage(Page.Login);
         });
 
         CheckAccount();
@@ -52,7 +43,7 @@ public class GameMainPage : UIBase
 
         if (string.IsNullOrEmpty(accountNumber))
         {
-            UIRoot.ShowPage(Page.LoginPage);
+            UIRoot.ShowPage(Page.Login);
         }
         else
         {
@@ -60,7 +51,7 @@ public class GameMainPage : UIBase
             {
                 if (data.error != 0)
                 {
-                    UIRoot.ShowPage(Page.LoginPage);
+                    UIRoot.ShowPage(Page.Login);
                     return;
                 }
 

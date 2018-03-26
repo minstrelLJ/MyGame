@@ -6,6 +6,7 @@ using System.Data;
 using System.Reflection;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using Tools;
 
 public class MySqlTemplate
 {
@@ -125,8 +126,17 @@ public class MySqlTemplate
             cmd += " ORDER BY " + sortKey + (asc ? " ASC" : " DESC");
         }
 
-        object obj = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, cmd, null);
-        return obj as DataSet;
+        try
+        {
+            object obj = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, cmd, null);
+            return obj as DataSet;
+        }
+        catch (Exception e)
+        {
+            LogManager.Instance.Logger.Error(e.Message + e.TargetSite);
+            return null;
+        }
+        
     }
     public static List<T> SELECT<T>(string[] tableNames, string[] keys, string where = "", bool asc = true, string[] sortKeys = null)
     {
@@ -246,6 +256,9 @@ public class MySqlTemplate
         switch (type)
         {
             case DataType.INT: cmd = " INT"; break;
+            case DataType.LONG: cmd = " BIGINT"; break;
+            case DataType.FLOAT: cmd = " FLOAT"; break;
+            case DataType.DOUBLE: cmd = " DOUBLE"; break;
             case DataType.CHAR1: cmd = " CHAR(1)"; break;
             case DataType.CHAR10: cmd = " CHAR(10)"; break;
             case DataType.VARCHAR40: cmd = " VARCHAR(40)"; break;
@@ -266,6 +279,28 @@ public class MySqlTemplate
         return cmd;
     }
 
+    #region CreateTable
+
+    public static void CreateRole()
+    {
+        MySqlTemplate.DROP("role");
+        CreateTableElement ct = new CreateTableElement("role");
+        ct.Add("roleId", DataType.INT, true);
+        ct.Add("roleName", DataType.VARCHAR40);
+        ct.Add("level", DataType.INT);
+        ct.Add("exp", DataType.LONG);
+        ct.Add("STR", DataType.FLOAT);
+        ct.Add("DEX", DataType.FLOAT);
+        ct.Add("INT", DataType.FLOAT);
+        ct.Add("CON", DataType.FLOAT);
+        ct.Add("potentialSTR", DataType.FLOAT);
+        ct.Add("potentialDEX", DataType.FLOAT);
+        ct.Add("potentialINT", DataType.FLOAT);
+        ct.Add("potentialCON", DataType.FLOAT);
+        ct.Create();
+    }
+
+    #endregion
 
     #region Test
 
@@ -417,7 +452,6 @@ public class MySqlTemplate
         public string Name { get; set; }
         public int Age { get; set; }
     }
-
     public class Test2
     {
         public int ID { get; set; }
@@ -435,6 +469,9 @@ public class MySqlTemplate
 public enum DataType
 {
     INT,
+    LONG,
+    FLOAT,
+    DOUBLE,
     CHAR1,
     CHAR10,
     VARCHAR40,

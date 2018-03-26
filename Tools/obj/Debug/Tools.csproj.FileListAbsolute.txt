@@ -9,3 +9,13 @@ E:\MyGame\Tools\bin\Debug\UnityEngine.dll
 E:\MyGame\Tools\bin\Debug\UnityEngine.UI.dll
 E:\MyGame\Tools\obj\Debug\Tools.dll
 E:\MyGame\Tools\obj\Debug\Tools.pdb
+E:\Git\MyGame\Tools\bin\Debug\Tools.dll
+E:\Git\MyGame\Tools\bin\Debug\Tools.pdb
+E:\Git\MyGame\Tools\bin\Debug\UnityEngine.dll
+E:\Git\MyGame\Tools\bin\Debug\UnityEngine.UI.dll
+E:\Git\MyGame\Tools\obj\Debug\Tools.dll
+E:\Git\MyGame\Tools\obj\Debug\Tools.pdb
+E:\Git\MyGame\Tools\bin\Debug\Common.dll
+E:\Git\MyGame\Tools\bin\Debug\Common.pdb
+E:\Git\MyGame\Tools\obj\Debug\Tools.csprojResolveAssemblyReference.cache
+E:\Git\MyGame\Tools\bin\Debug\Newtonsoft.Json.dll

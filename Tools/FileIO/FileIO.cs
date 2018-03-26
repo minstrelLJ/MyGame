@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Serialization.Formatters.Binary;
+using Common;
+using Newtonsoft.Json;
 
 namespace Tools
 {
@@ -61,6 +63,16 @@ namespace Tools
                 }
             }
         }
+        public static string ReadAllTxt(string filePath)
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Open))
+            {
+                using (StreamReader sw = new StreamReader(fs, Encoding.UTF8))
+                {
+                    return sw.ReadToEnd();
+                }
+            }
+        }
 
         /// <summary>
         /// 保存成二进制文件
@@ -85,6 +97,40 @@ namespace Tools
                 BinaryFormatter bf = new BinaryFormatter();
                 p = bf.Deserialize(fs) as T;
                 return p;
+            }
+        }
+
+        /// <summary>
+        /// 读取 json
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public static List<T> ReadJson<T>(string filePath) where T : class
+        {
+            try
+            {
+                string content = ReadAllTxt(filePath + ".json");
+                return JsonConvert.DeserializeObject<List<T>>(content);
+            }
+            catch (Exception e)
+            {
+                LogManager.Instance.Logger.Error(e.Message);
+                LogManager.Instance.Logger.Error(e.TargetSite.ToString());
+                return null;
+            }
+        }
+        public static string ReadJson(string filePath)
+        {
+            try
+            {
+                return ResourceManager.Instance.LoadText(filePath);
+            }
+            catch (Exception e)
+            {
+               LogManager.Instance.Logger.Error(e.Message);
+                LogManager.Instance.Logger.Error(e.TargetSite.ToString());
+                return null;
             }
         }
     }

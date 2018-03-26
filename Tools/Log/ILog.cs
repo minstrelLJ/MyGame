@@ -11,6 +11,11 @@ namespace Tools
     public interface ILog
     {
         /// <summary>
+        /// 设置日志类型
+        /// </summary>
+        /// <param name="type">类型</param>
+        void SetLogType(LogType type);
+        /// <summary>
         /// 一般日志
         /// </summary>
         /// <param name="format">信息</param>

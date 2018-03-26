@@ -1,1 +1,0 @@
-E:\MyGame\LoginServer\LoginServer\bin\Debug\LoginServer.exe.config

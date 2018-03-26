@@ -34,7 +34,7 @@ public class LoginPage : UIBase
         btnRegister.Event(() => 
         { 
             Hide();
-            UIRoot.ShowPage(Page.RegisterPage);
+            UIRoot.ShowPage(Page.Register);
         });
 	}
 
