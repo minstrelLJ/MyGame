@@ -1,0 +1,11 @@
+E:\MyGame\TestClient\bin\Debug\TestClient.exe.config
+E:\MyGame\TestClient\bin\Debug\TestClient.exe
+E:\MyGame\TestClient\bin\Debug\TestClient.pdb
+E:\MyGame\TestClient\bin\Debug\AsyncSocket.dll
+E:\MyGame\TestClient\bin\Debug\Tools.dll
+E:\MyGame\TestClient\bin\Debug\UnityEngine.dll
+E:\MyGame\TestClient\bin\Debug\AsyncSocket.pdb
+E:\MyGame\TestClient\bin\Debug\Tools.pdb
+E:\MyGame\TestClient\obj\Debug\TestClient.csprojResolveAssemblyReference.cache
+E:\MyGame\TestClient\obj\Debug\TestClient.exe
+E:\MyGame\TestClient\obj\Debug\TestClient.pdb

@@ -1,0 +1,14 @@
+E:\MyGame\GameServer\GameServer\bin\Debug\GameServer.exe.config
+E:\MyGame\GameServer\GameServer\bin\Debug\GameServer.exe
+E:\MyGame\GameServer\GameServer\bin\Debug\GameServer.pdb
+E:\MyGame\GameServer\GameServer\bin\Debug\AsyncSocket.dll
+E:\MyGame\GameServer\GameServer\bin\Debug\Tools.dll
+E:\MyGame\GameServer\GameServer\bin\Debug\UnityEngine.dll
+E:\MyGame\GameServer\GameServer\bin\Debug\AsyncSocket.pdb
+E:\MyGame\GameServer\GameServer\bin\Debug\Tools.pdb
+E:\MyGame\GameServer\GameServer\obj\Debug\GameServer.csprojResolveAssemblyReference.cache
+E:\MyGame\GameServer\GameServer\obj\Debug\GameServer.exe
+E:\MyGame\GameServer\GameServer\obj\Debug\GameServer.pdb
+E:\MyGame\GameServer\GameServer\bin\Debug\Data.dll
+E:\MyGame\GameServer\GameServer\bin\Debug\Data.pdb
+E:\MyGame\GameServer\GameServer\bin\Debug\MySql.Data.dll

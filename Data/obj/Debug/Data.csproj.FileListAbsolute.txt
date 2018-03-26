@@ -1,0 +1,10 @@
+E:\MyGame\Data\bin\Debug\Data.dll
+E:\MyGame\Data\bin\Debug\Data.pdb
+E:\MyGame\Data\obj\Debug\Data.dll
+E:\MyGame\Data\obj\Debug\Data.pdb
+E:\MyGame\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+E:\MyGame\Data\bin\Debug\AsyncSocket.dll
+E:\MyGame\Data\bin\Debug\Tools.dll
+E:\MyGame\Data\bin\Debug\UnityEngine.dll
+E:\MyGame\Data\bin\Debug\AsyncSocket.pdb
+E:\MyGame\Data\bin\Debug\Tools.pdb

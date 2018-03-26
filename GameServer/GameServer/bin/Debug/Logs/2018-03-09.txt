@@ -1,0 +1,7 @@
+13:57:45 [Debug]:Start listen socket 0.0.0.0:9999 success
+13:58:50 [Debug]:Start listen socket 0.0.0.0:9999 success
+13:59:25 [Debug]:Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:19170, Connected client 1
+14:00:53 [Debug]:Client connection disconnected. Local Address: 127.0.0.1:9999 Remote Address: 127.0.0.1:19170, Connected client 0
+14:01:21 [Debug]:Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:19320, Connected client 1
+14:03:51 [Debug]:Client connection disconnected. Local Address: 127.0.0.1:9999 Remote Address: 127.0.0.1:19320, Connected client 0
+14:05:05 [Debug]:Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:19609, Connected client 1

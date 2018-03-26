@@ -1,0 +1,15 @@
+E:\TestSocket\AsyncSocket\bin\Debug\AsyncSocket.dll
+E:\TestSocket\AsyncSocket\bin\Debug\AsyncSocket.pdb
+E:\TestSocket\AsyncSocket\obj\Debug\AsyncSocket.dll
+E:\TestSocket\AsyncSocket\obj\Debug\AsyncSocket.pdb
+E:\TestSocket\AsyncSocket\obj\Debug\AsyncSocket.csprojResolveAssemblyReference.cache
+E:\TestSocket\AsyncSocket\bin\Debug\Tools.dll
+E:\TestSocket\AsyncSocket\bin\Debug\Tools.pdb
+E:\MyGame\AsyncSocket\bin\Debug\AsyncSocket.dll
+E:\MyGame\AsyncSocket\bin\Debug\AsyncSocket.pdb
+E:\MyGame\AsyncSocket\bin\Debug\Tools.dll
+E:\MyGame\AsyncSocket\bin\Debug\UnityEngine.dll
+E:\MyGame\AsyncSocket\bin\Debug\Tools.pdb
+E:\MyGame\AsyncSocket\obj\Debug\AsyncSocket.csprojResolveAssemblyReference.cache
+E:\MyGame\AsyncSocket\obj\Debug\AsyncSocket.dll
+E:\MyGame\AsyncSocket\obj\Debug\AsyncSocket.pdb

@@ -1,0 +1,11 @@
+E:\TestSocket\Tools\bin\Debug\Tools.dll
+E:\TestSocket\Tools\bin\Debug\Tools.pdb
+E:\TestSocket\Tools\obj\Debug\Tools.csprojResolveAssemblyReference.cache
+E:\TestSocket\Tools\obj\Debug\Tools.dll
+E:\TestSocket\Tools\obj\Debug\Tools.pdb
+E:\MyGame\Tools\bin\Debug\Tools.dll
+E:\MyGame\Tools\bin\Debug\Tools.pdb
+E:\MyGame\Tools\bin\Debug\UnityEngine.dll
+E:\MyGame\Tools\bin\Debug\UnityEngine.UI.dll
+E:\MyGame\Tools\obj\Debug\Tools.dll
+E:\MyGame\Tools\obj\Debug\Tools.pdb

@@ -1,0 +1,8 @@
+D:\Project\Common\Common\bin\Debug\Common.dll
+D:\Project\Common\Common\bin\Debug\Common.pdb
+D:\Project\Common\Common\bin\Debug\UnityEngine.dll
+D:\Project\Common\Common\obj\Debug\Common.dll
+D:\Project\Common\Common\obj\Debug\Common.pdb
+D:\Project\Common\Common\bin\Debug\UnityEngine.UI.dll
+D:\Project\Common\Common\bin\Debug\Newtonsoft35.Json.dll
+D:\Project\Common\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
