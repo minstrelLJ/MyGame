@@ -40,5 +40,7 @@ namespace AsyncSocket
         EnterGame = 1002,           // 进入游戏
         GetRole = 1003,                // 获取角色信息
         CreateRole = 1004,            // 创建角色
+        SelectRole = 1005,             // 选择角色
+        StartBattle = 1006,            // 开始战斗
     }
 }

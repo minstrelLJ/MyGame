@@ -121,33 +121,15 @@ namespace GameServer
 
                 MySqlTemplate.UPDATE("user", new string[] { "roleId" }, new object[] { role.roleId });
                 MySqlTemplate.UPDATE("setting", new string[] { "nextRoleId" }, new object[] { settings.nextRoleId });
-                //MySqlTemplate.INSERT("role", new string[] { "roleId", "roleName", "level", "exp", "STR", "DEX", "INT", "CON", 
-                //     "potentialSTR", "potentialDEX", "potentialINT", "potentialCON" }, new object[] {
-                //     role.roleId, role.roleName, role.level, role.exp, role.fixedSTR,
-                //     role.fixedDEX, role.fixedMAG, role.fixedCON, role.potentialSTR, role.potentialDEX,
-                //     role.potentialMAG, role.potentialCON });
-
-                MySqlTemplate.INSERT("role", new string[] { "roleId", "roleName", "level", "exp", "fixedSTR" }, new object[] {
-                     role.roleId, role.roleName, role.level, role.exp, role.fixedSTR });
+                MySqlTemplate.INSERT("role", new string[] { "roleId", "roleName", "level", "exp", "fixedSTR", "fixedDEX", "fixedMAG", "fixedCON", 
+                     "potentialSTR", "potentialDEX", "potentialMAG", "potentialCON" }, new object[] {
+                     role.roleId, role.roleName, role.level, role.exp, role.fixedSTR,
+                     role.fixedDEX, role.fixedMAG, role.fixedCON, role.potentialSTR, role.potentialDEX,
+                     role.potentialMAG, role.potentialCON });
 
                 return 0;
             }
             return 1;
         }
-
-        public int roleId { get; set; }
-        public string roleName { get; set; }
-        public int level { get; set; }
-        public int exp { get; set; }
-
-        public float STR { get; set; }
-        public float DEX { get; set; }
-        public float INT { get; set; }
-        public float CON { get; set; }
-
-        public float potentialSTR { get; set; }
-        public float potentialDEX { get; set; }
-        public float potentialINT { get; set; }
-        public float potentialCON { get; set; }
     }
 }

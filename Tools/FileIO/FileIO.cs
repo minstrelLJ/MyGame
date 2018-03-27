@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Serialization.Formatters.Binary;
-using Common;
 using Newtonsoft.Json;
 
 namespace Tools
@@ -116,19 +115,6 @@ namespace Tools
             catch (Exception e)
             {
                 LogManager.Instance.Logger.Error(e.Message);
-                LogManager.Instance.Logger.Error(e.TargetSite.ToString());
-                return null;
-            }
-        }
-        public static string ReadJson(string filePath)
-        {
-            try
-            {
-                return ResourceManager.Instance.LoadText(filePath);
-            }
-            catch (Exception e)
-            {
-               LogManager.Instance.Logger.Error(e.Message);
                 LogManager.Instance.Logger.Error(e.TargetSite.ToString());
                 return null;
             }

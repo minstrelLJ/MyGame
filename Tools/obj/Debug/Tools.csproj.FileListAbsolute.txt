@@ -1,1 +1,7 @@
-E:\GitPro\MyGame\Tools\obj\Debug\Tools.csprojResolveAssemblyReference.cache
+E:\GitPro\MyGame\Tools\bin\Debug\Tools.dll
+E:\GitPro\MyGame\Tools\bin\Debug\Tools.pdb
+E:\GitPro\MyGame\Tools\bin\Debug\Newtonsoft.Json.dll
+E:\GitPro\MyGame\Tools\bin\Debug\UnityEngine.dll
+E:\GitPro\MyGame\Tools\bin\Debug\UnityEngine.UI.dll
+E:\GitPro\MyGame\Tools\obj\Debug\Tools.dll
+E:\GitPro\MyGame\Tools\obj\Debug\Tools.pdb

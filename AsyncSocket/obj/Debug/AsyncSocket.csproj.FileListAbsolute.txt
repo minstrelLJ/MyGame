@@ -1,1 +1,9 @@
+E:\GitPro\MyGame\AsyncSocket\bin\Debug\AsyncSocket.dll
+E:\GitPro\MyGame\AsyncSocket\bin\Debug\AsyncSocket.pdb
+E:\GitPro\MyGame\AsyncSocket\bin\Debug\Tools.dll
+E:\GitPro\MyGame\AsyncSocket\bin\Debug\UnityEngine.dll
+E:\GitPro\MyGame\AsyncSocket\bin\Debug\Newtonsoft.Json.dll
+E:\GitPro\MyGame\AsyncSocket\bin\Debug\Tools.pdb
 E:\GitPro\MyGame\AsyncSocket\obj\Debug\AsyncSocket.csprojResolveAssemblyReference.cache
+E:\GitPro\MyGame\AsyncSocket\obj\Debug\AsyncSocket.dll
+E:\GitPro\MyGame\AsyncSocket\obj\Debug\AsyncSocket.pdb

@@ -8,21 +8,21 @@ namespace GameServer
 {
     public class ServerPool
     {
-        private Stack<Server> pool;
+        private Stack<BattleServer> pool;
 
         public ServerPool(int capacity)
         {
-            pool = new Stack<Server>(capacity);
+            pool = new Stack<BattleServer>(capacity);
 
-            Server server;
+            BattleServer server;
             for (int i = 0; i < 100; i++)
             {
-                server = new Server();
+                server = new BattleServer();
                 pool.Push(server);
             }
         }
 
-        public void Push(Server item)
+        public void Push(BattleServer item)
         {
             if (item == null)
                 Global.Logger.Error("Items added to a Server cannot be null");
@@ -33,14 +33,14 @@ namespace GameServer
             }
         }
 
-        public Server Pop()
+        public BattleServer Pop()
         {
             lock (pool)
             {
-                Server server = pool.Pop();
+                BattleServer server = pool.Pop();
                 if (server == null)
                 {
-                    server = new Server();
+                    server = new BattleServer();
                     pool.Push(server);
                 }
                 return server;

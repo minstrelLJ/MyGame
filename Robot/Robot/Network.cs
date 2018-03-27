@@ -32,8 +32,10 @@ namespace Robot
             switch (data.cmd)
             {
                 case CMD.Login: RLogin(data); break;
+                case CMD.EnterGame: REnterGame(data); break;
                 case CMD.GetRole: RGetRole(data); break;
                 case CMD.CreateRole: RCreateRole(data); break;
+                case CMD.SelectRole: SelectRole(data); break;
 
                 default: Console.WriteLine("未知 CMD " + data.cmd); break;
             }
@@ -48,7 +50,7 @@ namespace Robot
             }
 
             DataManager.Instance.userId = int.Parse(data.list[0]);
-            SGetRole();
+            SEnterGame();
         }
         private void RGetRole(DataBase data)
         {
@@ -59,6 +61,7 @@ namespace Robot
             else
             {
                 DataManager.Instance.role = new Role(data);
+                SelectRole();
             }
         }
         private void RCreateRole(DataBase data)
@@ -69,6 +72,23 @@ namespace Robot
                 return;
             }
             SGetRole();
+        }
+        private void REnterGame(DataBase data)
+        {
+            if (data.error > 0)
+            {
+                Console.WriteLine("ERR: " + data.error);
+                return;
+            }
+            SGetRole();
+        }
+        private void SelectRole(DataBase data)
+        {
+            if (data.error > 0)
+            {
+                Console.WriteLine("ERR: " + data.error);
+                return;
+            }
         }
 
         public void SLogin()
@@ -89,6 +109,18 @@ namespace Robot
             DataBase db = DataPool.Instance.Pop(CMD.CreateRole);
             db.Add(DataManager.Instance.userId);
             db.Add("机器人" + DataManager.Instance.userId);
+            SendMessage(db);
+        }
+        private void SEnterGame()
+        {
+            DataBase db = DataPool.Instance.Pop(CMD.EnterGame);
+            db.Add(DataManager.Instance.userId);
+            SendMessage(db);
+        }
+        private void SelectRole()
+        {
+            DataBase db = DataPool.Instance.Pop(CMD.SelectRole);
+            db.Add(DataManager.Instance.userId);
             SendMessage(db);
         }
     }

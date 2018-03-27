@@ -32,14 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AsyncSocket, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\AsyncSocket.dll</HintPath>
-    </Reference>
-    <Reference Include="Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Data.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data, Version=5.1.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\MySql.Data.dll</HintPath>
@@ -51,14 +43,11 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Tools.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\ConfigManager.cs" />
     <Compile Include="Data\DataManager.cs" />
+    <Compile Include="Data\UserInfo.cs" />
     <Compile Include="MySQL\CreateTableElement.cs" />
     <Compile Include="MySQL\MySqlHelper.cs" />
     <Compile Include="MySQL\MySqlTemplate.cs" />
@@ -68,13 +57,28 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Network\NetworkManager.cs" />
-    <Compile Include="Server\Server.cs" />
+    <Compile Include="Server\BattleServer.cs" />
+    <Compile Include="Server\MainServer.cs" />
     <Compile Include="Server\ServerBase.cs" />
     <Compile Include="Server\ServerManager.cs" />
     <Compile Include="Server\ServerPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AsyncSocket\AsyncSocket.csproj">
+      <Project>{be2fd0da-d479-4978-b069-b253f8dc4ad2}</Project>
+      <Name>AsyncSocket</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Data.csproj">
+      <Project>{b4f4fb8d-cd02-4725-a59a-bfdab850036b}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tools\Tools.csproj">
+      <Project>{ce59b5c0-988f-43d3-b355-cc0f8059e2a0}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

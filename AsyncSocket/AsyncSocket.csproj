@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{48B21280-52B9-4A27-BFBC-1A760500FE0F}</ProjectGuid>
+    <ProjectGuid>{BE2FD0DA-D479-4978-B069-B253F8DC4AD2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AsyncSocket</RootNamespace>
@@ -38,33 +38,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicFunc.cs" />
+    <Compile Include="Buffer\BufferBase.cs" />
+    <Compile Include="Buffer\BufferRecive.cs" />
+    <Compile Include="Buffer\BufferSend.cs" />
     <Compile Include="Data\ClientData.cs" />
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Data\DataPool.cs" />
     <Compile Include="Data\ServerData.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtocolKey.cs" />
     <Compile Include="Socket\AsyncSocketUserToken.cs" />
     <Compile Include="Socket\AsyncSocketUserTokenPool.cs" />
     <Compile Include="Socket\SocketBase.cs" />
-    <Compile Include="BasicFunc.cs" />
-    <Compile Include="Buffer\BufferBase.cs" />
     <Compile Include="Socket\SocketClient.cs" />
-    <Compile Include="ProtocolKey.cs" />
-    <Compile Include="Buffer\BufferRecive.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Buffer\BufferSend.cs" />
     <Compile Include="Socket\SocketServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tools\Tools.csproj">
-      <Project>{2cd160c8-c13a-4eec-b948-1c1fe9e4cb6d}</Project>
+      <Project>{ce59b5c0-988f-43d3-b355-cc0f8059e2a0}</Project>
       <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>Copy $(TargetPath) $(SolutionDir)..\lib</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

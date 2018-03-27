@@ -9,3 +9,5 @@ E:\GitPro\MyGame\Robot\Robot\obj\Debug\Robot.csprojResolveAssemblyReference.cach
 E:\GitPro\MyGame\Robot\Robot\obj\Debug\Robot.exe
 E:\GitPro\MyGame\Robot\Robot\obj\Debug\Robot.pdb
 E:\GitPro\MyGame\Robot\Robot\bin\Debug\Data.dll
+E:\GitPro\MyGame\Robot\Robot\bin\Debug\AsyncSocket.pdb
+E:\GitPro\MyGame\Robot\Robot\bin\Debug\Data.pdb

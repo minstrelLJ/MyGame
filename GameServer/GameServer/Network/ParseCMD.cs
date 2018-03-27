@@ -20,8 +20,10 @@ namespace GameServer
                 case CMD.EnterGame: EnterGame(client, data); break;
                 case CMD.GetRole: GetRole(client, data); break;
                 case CMD.CreateRole: CreateRole(client, data); break;
-                default:
-                    break;
+                case CMD.SelectRole: SelectRole(client, data); break;
+                case CMD.StartBattle: StartBattle(client, data); break;
+
+                default: LogManager.Instance.Logger.Error("未知 CMD " + data.cmd); break;
             }
         }
 
@@ -114,6 +116,23 @@ namespace GameServer
                 db = DataPool.Instance.Pop(data.cmd, 1);
                 client.SendMessage(db);
             }
+        }
+        private static void SelectRole(AsyncSocketUserToken client, DataBase data)
+        {
+            int userId = int.Parse(data.list[0]);
+            User user = DataManager.Instance.ReadUser(userId);
+            Role role = DataManager.Instance.ReadRole(user.roleId);
+            PlayerInfo player = new PlayerInfo();
+            player.userId = userId;
+            player.role = role;
+            player.client = client;
+
+            ServerManager.Instance.EnterNewPlayer(player);
+        }
+        private static void StartBattle(AsyncSocketUserToken client, DataBase data)
+        {
+            int userId = int.Parse(data.list[0]);
+            ServerManager.Instance.BattleStart(userId);
         }
     }
 }
