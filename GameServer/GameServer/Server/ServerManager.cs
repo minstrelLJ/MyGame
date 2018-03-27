@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,13 @@ namespace GameServer
 
         Dictionary<int, PlayerInfo> playerDic;
         Dictionary<int, Role> roleDic;
+        List<BattleServer> playingServer;
 
         public void Init()
         {
             playerDic = new Dictionary<int, PlayerInfo>();
             roleDic = new Dictionary<int, Role>();
+            playingServer = new List<BattleServer>();
 
             serverPool = new ServerPool(100);
             for (int i = 0; i < 100; i++)
@@ -43,6 +46,11 @@ namespace GameServer
                 BattleServer bs = serverPool.Pop();
                 bs.EnterPlayer(player);
             }
+        }
+
+        public void AddPlayingServer(BattleServer bs)
+        {
+            playingServer.Add(bs);
         }
     }
 }

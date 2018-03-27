@@ -15,5 +15,14 @@ namespace GameServer
         {
 
         }
+
+        public void Start()
+        {
+            ServerManager.Instance.AddPlayingServer(this);
+        }
+        public void Update()
+        {
+
+        }
     }
 }
