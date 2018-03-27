@@ -29,3 +29,15 @@ E:\Git\MyGame\GameServer\GameServer\obj\Debug\GameServer.csprojResolveAssemblyRe
 E:\Git\MyGame\GameServer\GameServer\bin\Debug\Common.dll
 E:\Git\MyGame\GameServer\GameServer\bin\Debug\Newtonsoft.Json.dll
 E:\Git\MyGame\GameServer\GameServer\bin\Debug\Common.pdb
+E:\GitPro\MyGame\GameServer\GameServer\bin\Debug\GameServer.exe.config
+E:\GitPro\MyGame\GameServer\GameServer\obj\Debug\GameServer.exe
+E:\GitPro\MyGame\GameServer\GameServer\obj\Debug\GameServer.pdb
+E:\GitPro\MyGame\GameServer\GameServer\bin\Debug\GameServer.exe
+E:\GitPro\MyGame\GameServer\GameServer\bin\Debug\GameServer.pdb
+E:\GitPro\MyGame\GameServer\GameServer\bin\Debug\AsyncSocket.dll
+E:\GitPro\MyGame\GameServer\GameServer\bin\Debug\Data.dll
+E:\GitPro\MyGame\GameServer\GameServer\bin\Debug\Tools.dll
+E:\GitPro\MyGame\GameServer\GameServer\bin\Debug\UnityEngine.dll
+E:\GitPro\MyGame\GameServer\GameServer\bin\Debug\Newtonsoft.Json.dll
+E:\GitPro\MyGame\GameServer\GameServer\bin\Debug\Common.dll
+E:\GitPro\MyGame\GameServer\GameServer\obj\Debug\GameServer.csprojResolveAssemblyReference.cache

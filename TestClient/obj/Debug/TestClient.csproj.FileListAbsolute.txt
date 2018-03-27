@@ -9,3 +9,17 @@ E:\MyGame\TestClient\bin\Debug\Tools.pdb
 E:\MyGame\TestClient\obj\Debug\TestClient.csprojResolveAssemblyReference.cache
 E:\MyGame\TestClient\obj\Debug\TestClient.exe
 E:\MyGame\TestClient\obj\Debug\TestClient.pdb
+E:\GitPro\MyGame\TestClient\bin\Debug\TestClient.exe.config
+E:\GitPro\MyGame\TestClient\obj\Debug\TestClient.exe
+E:\GitPro\MyGame\TestClient\obj\Debug\TestClient.pdb
+E:\GitPro\MyGame\TestClient\bin\Debug\TestClient.exe
+E:\GitPro\MyGame\TestClient\bin\Debug\TestClient.pdb
+E:\GitPro\MyGame\TestClient\bin\Debug\AsyncSocket.dll
+E:\GitPro\MyGame\TestClient\bin\Debug\Tools.dll
+E:\GitPro\MyGame\TestClient\bin\Debug\UnityEngine.dll
+E:\GitPro\MyGame\TestClient\bin\Debug\Newtonsoft.Json.dll
+E:\GitPro\MyGame\TestClient\bin\Debug\Common.dll
+E:\GitPro\MyGame\TestClient\bin\Debug\AsyncSocket.pdb
+E:\GitPro\MyGame\TestClient\bin\Debug\Tools.pdb
+E:\GitPro\MyGame\TestClient\bin\Debug\Common.pdb
+E:\GitPro\MyGame\TestClient\obj\Debug\TestClient.csprojResolveAssemblyReference.cache

@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AsyncSocket, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AsyncSocket.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -47,16 +51,9 @@
     <Compile Include="Settings.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AsyncSocket\AsyncSocket.csproj">
-      <Project>{48b21280-52b9-4a27-bfbc-1a760500fe0f}</Project>
-      <Name>AsyncSocket</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>Copy $(TargetPath) E:\Git\MyGame\Client\Assets\Plugins
-</PostBuildEvent>
+    <PostBuildEvent>Copy $(TargetPath) $(SolutionDir)..\lib</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

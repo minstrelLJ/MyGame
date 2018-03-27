@@ -38,7 +38,7 @@ namespace GameServer
             int error = DataManager.Instance.CheckUser(acc, pw);
 
             DataBase db = DataPool.Instance.Pop(data.cmd, error);
-            db.Add(user.userId);
+            if (error == 0) db.Add(user.userId);
             client.SendMessage(db);
         }
         private static void Register(AsyncSocketUserToken client, DataBase data)
@@ -59,6 +59,7 @@ namespace GameServer
         }
         private static void CreateRole(AsyncSocketUserToken client, DataBase data)
         {
+            int userId = int.Parse(data.list[0]);
             string roleName = data.list[1];
 
             DataBase db;
@@ -73,6 +74,10 @@ namespace GameServer
             if (!DataManager.Instance.RoleIsExisting(roleName))
             {
                 Role role = ConfigManager.Instance.GetRole(1000);
+                role.roleName = roleName;
+
+                int error = DataManager.Instance.AddNewRole(userId, role);
+                db = DataPool.Instance.Pop(data.cmd, error);
             }
             else
             {
@@ -94,13 +99,13 @@ namespace GameServer
                 db.Add(role.roleName);
                 db.Add(role.level);
                 db.Add(role.exp);
-                db.Add(role.STR);
-                db.Add(role.DEX);
-                db.Add(role.INT);
-                db.Add(role.CON);
+                db.Add(role.fixedSTR);
+                db.Add(role.fixedDEX);
+                db.Add(role.fixedMAG);
+                db.Add(role.fixedCON);
                 db.Add(role.potentialSTR);
                 db.Add(role.potentialDEX);
-                db.Add(role.potentialINT);
+                db.Add(role.potentialMAG);
                 db.Add(role.potentialCON);
                 client.SendMessage(db);
             }

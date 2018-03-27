@@ -11,7 +11,13 @@ namespace GameServer
         
         static void Main(string[] args)
         {
+            MySqlTemplate.CreateSetting();
+            MySqlTemplate.CreateUser();
+            MySqlTemplate.CreateRole();
+
             Init();
+
+            MySqlTemplate.AddUser();
 
             Console.ReadLine();
         }
