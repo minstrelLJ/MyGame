@@ -11,6 +11,12 @@ namespace Robot
     public class Network : Singleton<Network>
     {
         SocketClient Socket;
+        BattleManager bm;
+
+        public void Init()
+        {
+            bm = new BattleManager();
+        }
 
         public void Connect()
         {
@@ -35,7 +41,9 @@ namespace Robot
                 case CMD.EnterGame: REnterGame(data); break;
                 case CMD.GetRole: RGetRole(data); break;
                 case CMD.CreateRole: RCreateRole(data); break;
-                case CMD.SelectRole: SelectRole(data); break;
+                case CMD.SelectRole: RSelectRole(data); break;
+                case CMD.EnterBattleScene: REnterBattleScene(data); break;
+                case CMD.EnterNewRole: REnterNewRole(data); break;
 
                 default: Console.WriteLine("未知 CMD " + data.cmd); break;
             }
@@ -61,7 +69,7 @@ namespace Robot
             else
             {
                 DataManager.Instance.role = new Role(data);
-                SelectRole();
+                SSelectRole();
             }
         }
         private void RCreateRole(DataBase data)
@@ -82,13 +90,37 @@ namespace Robot
             }
             SGetRole();
         }
-        private void SelectRole(DataBase data)
+        private void RSelectRole(DataBase data)
         {
             if (data.error > 0)
             {
                 Console.WriteLine("ERR: " + data.error);
                 return;
             }
+            SEnterBattleScene(101);
+        }
+        private void REnterBattleScene(DataBase data)
+        {
+            if (data.error > 0)
+            {
+                Console.WriteLine("ERR: " + data.error);
+                return;
+            }
+
+            BattleManager.Instance.serverId = int.Parse(data.list[0]);
+        }
+        private void REnterNewRole(DataBase data)
+        {
+            if (data.error > 0)
+            {
+                Console.WriteLine("ERR: " + data.error);
+                return;
+            }
+
+            string roleJson = data.list[0];
+            BattleManager.Instance.AddEntity(roleJson);
+
+            BattleManager.Instance.Attack(1);
         }
 
         public void SLogin()
@@ -97,12 +129,16 @@ namespace Robot
             db.Add("test001");
             db.Add("123");
             SendMessage(db);
+
+            Console.WriteLine("SLogin");
         }
         private void SGetRole()
         {
             DataBase db = DataPool.Instance.Pop(CMD.GetRole);
             db.Add(DataManager.Instance.userId);
             SendMessage(db);
+
+            Console.WriteLine("SGetRole");
         }
         private void SCreateRole()
         {
@@ -110,17 +146,40 @@ namespace Robot
             db.Add(DataManager.Instance.userId);
             db.Add("机器人" + DataManager.Instance.userId);
             SendMessage(db);
+
+            Console.WriteLine("SCreateRole");
         }
         private void SEnterGame()
         {
             DataBase db = DataPool.Instance.Pop(CMD.EnterGame);
             db.Add(DataManager.Instance.userId);
             SendMessage(db);
+
+            Console.WriteLine("SEnterGame");
         }
-        private void SelectRole()
+        private void SSelectRole()
         {
             DataBase db = DataPool.Instance.Pop(CMD.SelectRole);
             db.Add(DataManager.Instance.userId);
+            SendMessage(db);
+
+            Console.WriteLine("SelectRole");
+        }
+        private void SEnterBattleScene(int sceneId)
+        {
+            DataBase db = DataPool.Instance.Pop(CMD.EnterBattleScene);
+            db.Add(DataManager.Instance.userId);
+            db.Add(sceneId);
+            SendMessage(db);
+
+            Console.WriteLine("StartBattle");
+        }
+        public void SAttack(int entityId)
+        {
+            DataBase db = DataPool.Instance.Pop(CMD.Attack);
+            db.Add(DataManager.Instance.userId);
+            db.Add(BattleManager.Instance.serverId);
+            db.Add(entityId);
             SendMessage(db);
         }
     }

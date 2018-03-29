@@ -106,17 +106,35 @@
     <Reference Include="UnityEditor.Graphs">
       <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WebGL.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
     <Reference Include="AsyncSocket">
       <HintPath>Assets\Plugins\AsyncSocket.dll</HintPath>
     </Reference>
-    <Reference Include="Tools">
-      <HintPath>Assets\Plugins\Tools.dll</HintPath>
+    <Reference Include="Common">
+      <HintPath>Assets\Plugins\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Data">
+      <HintPath>Assets\Plugins\Data.dll</HintPath>
     </Reference>
     <Reference Include="Excel">
       <HintPath>Assets\Plugins\Excel.dll</HintPath>
@@ -124,17 +142,14 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data">
-      <HintPath>Assets\Plugins\System.Data.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Assets\Plugins\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Data">
-      <HintPath>Assets\Plugins\Data.dll</HintPath>
+    <Reference Include="System.Data">
+      <HintPath>Assets\Plugins\System.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Common">
-      <HintPath>Assets\Plugins\Common.dll</HintPath>
+    <Reference Include="Tools">
+      <HintPath>Assets\Plugins\Tools.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

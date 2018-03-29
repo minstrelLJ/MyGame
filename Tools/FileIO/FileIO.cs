@@ -119,5 +119,30 @@ namespace Tools
                 return null;
             }
         }
+
+        /// <summary>
+        /// 转换为 json
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static string ToJson(object obj)
+        {
+            string json = JsonConvert.SerializeObject(obj);
+            return json;
+        }
+        /// <summary>
+        /// Json 转为对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        //public static List<T> JsonToObject<T>(string json) where T: class
+        //{
+        //    return JsonConvert.DeserializeObject<List<T>>(json);
+        //}
+        public static T JsonToObject<T>(string json) where T : class
+        {
+            return JsonConvert.DeserializeObject<T>(json);
+        }
     }
 }

@@ -12,28 +12,66 @@ namespace GameServer
         public static string CONFIG_PATH = System.IO.Directory.GetCurrentDirectory() + "/Configs/";
 
         public Dictionary<int, Role> roleDic = new Dictionary<int, Role>();
+        public Dictionary<int, Monster> monsterDic = new Dictionary<int, Monster>();
+        public Dictionary<int, CheckPoint> levelDic = new Dictionary<int, CheckPoint>();
 
         public void Init()
         {
             GetRoles();
+            GetMonster();
+            GetCheckPoint();
         }
         private void GetRoles()
         {
-            var roles = FileIO.ReadJson<Role>(CONFIG_PATH + "Role");
-            foreach (var item in roles)
+            var list = FileIO.ReadJson<Role>(CONFIG_PATH + "Role");
+            foreach (var item in list)
             {
-                roleDic[item.roleId] = item;
+                roleDic[item.id] = item;
+            }
+        }
+        private void GetMonster()
+        {
+            var list = FileIO.ReadJson<Monster>(CONFIG_PATH + "Monster");
+            foreach (var item in list)
+            {
+                monsterDic[item.id] = item;
+            }
+        }
+        private void GetCheckPoint()
+        {
+            var list = FileIO.ReadJson<CheckPoint>(CONFIG_PATH + "CheckPoint");
+            foreach (var item in list)
+            {
+                levelDic[item.id] = item;
             }
         }
 
         public Role GetRole(int roleId)
         {
-            Role role;
-            if (!roleDic.TryGetValue(roleId, out role))
+            Role ret;
+            if (!roleDic.TryGetValue(roleId, out ret))
             {
-                LogManager.Instance.Logger.Error("没有配置角色 " + roleId);
+                LogManager.Instance.Logger.Error("没有配置 Role " + roleId);
             }
-            return role;
+            return ret;
+        }
+        public Monster GetMonster(int id)
+        {
+            Monster ret;
+            if (!monsterDic.TryGetValue(id, out ret))
+            {
+                LogManager.Instance.Logger.Error("没有配置 Monster " + ret);
+            }
+            return ret;
+        }
+        public CheckPoint GetCheckPoint(int id)
+        {
+            CheckPoint ret;
+            if (!levelDic.TryGetValue(id, out ret))
+            {
+                LogManager.Instance.Logger.Error("没有配置 Monster " + id);
+            }
+            return ret;
         }
     }
 }

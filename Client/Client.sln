@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "..\Tools\Tools.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncSocket", "..\AsyncSocket\AsyncSocket.csproj", "{48B21280-52B9-4A27-BFBC-1A760500FE0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\Common\Common.csproj", "{3A05717B-857C-49BD-BB0F-7ED54E899287}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,10 +31,6 @@ Global
 		{48B21280-52B9-4A27-BFBC-1A760500FE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48B21280-52B9-4A27-BFBC-1A760500FE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48B21280-52B9-4A27-BFBC-1A760500FE0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A05717B-857C-49BD-BB0F-7ED54E899287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A05717B-857C-49BD-BB0F-7ED54E899287}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A05717B-857C-49BD-BB0F-7ED54E899287}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A05717B-857C-49BD-BB0F-7ED54E899287}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

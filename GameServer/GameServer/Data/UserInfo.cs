@@ -10,7 +10,7 @@ namespace GameServer
     public class PlayerInfo
     {
         public int userId { get; set; }
-        public Role role { get; set; }
+        public Entity role { get; set; }
         public AsyncSocketUserToken client;
     }
 }

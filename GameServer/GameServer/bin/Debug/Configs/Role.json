@@ -1,7 +1,7 @@
 ﻿[
   {
-    "roleId": 1000,
-    "roleName": "新角色",
+    "id": 1000,
+    "name": "新角色",
     "level": 1,
     "exp": 0,
     "fixedSTR": 10.0,

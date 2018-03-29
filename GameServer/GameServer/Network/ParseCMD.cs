@@ -21,7 +21,8 @@ namespace GameServer
                 case CMD.GetRole: GetRole(client, data); break;
                 case CMD.CreateRole: CreateRole(client, data); break;
                 case CMD.SelectRole: SelectRole(client, data); break;
-                case CMD.StartBattle: StartBattle(client, data); break;
+                case CMD.EnterBattleScene: EnterBattleScene(client, data); break;
+                case CMD.Attack: Attack(client, data); break;
 
                 default: LogManager.Instance.Logger.Error("未知 CMD " + data.cmd); break;
             }
@@ -76,7 +77,7 @@ namespace GameServer
             if (!DataManager.Instance.RoleIsExisting(roleName))
             {
                 Role role = ConfigManager.Instance.GetRole(1000);
-                role.roleName = roleName;
+                role.name = roleName;
 
                 int error = DataManager.Instance.AddNewRole(userId, role);
                 db = DataPool.Instance.Pop(data.cmd, error);
@@ -97,8 +98,8 @@ namespace GameServer
             if (role != null)
             {
                 db = DataPool.Instance.Pop(data.cmd, 0);
-                db.Add(role.roleId);
-                db.Add(role.roleName);
+                db.Add(role.id);
+                db.Add(role.name);
                 db.Add(role.level);
                 db.Add(role.exp);
                 db.Add(role.fixedSTR);
@@ -121,18 +122,46 @@ namespace GameServer
         {
             int userId = int.Parse(data.list[0]);
             User user = DataManager.Instance.ReadUser(userId);
-            Role role = DataManager.Instance.ReadRole(user.roleId);
+            Entity role = DataManager.Instance.ReadRole(user.roleId);
             PlayerInfo player = new PlayerInfo();
             player.userId = userId;
             player.role = role;
             player.client = client;
 
             ServerManager.Instance.EnterNewPlayer(player);
+
+            DataBase db = DataPool.Instance.Pop(data.cmd, 0);
+            client.SendMessage(db);
         }
-        private static void StartBattle(AsyncSocketUserToken client, DataBase data)
+        private static void EnterBattleScene(AsyncSocketUserToken client, DataBase data)
         {
             int userId = int.Parse(data.list[0]);
-            ServerManager.Instance.BattleStart(userId);
+            int levelId = int.Parse(data.list[1]);
+            User user = DataManager.Instance.ReadUser(userId);
+            Entity role = DataManager.Instance.ReadRole(user.roleId);
+            PlayerInfo player = new PlayerInfo();
+            player.userId = userId;
+            player.role = role;
+            player.client = client;
+
+            BattleServer bs = ServerManager.Instance.CreateBattleScene(levelId);
+            bs.EnterPlayer(player);
+
+            DataBase db = DataPool.Instance.Pop(CMD.EnterBattleScene, 0);
+            db.Add(bs.serverId);
+            client.SendMessage(db);
+        }
+        private static void Attack(AsyncSocketUserToken client, DataBase data) 
+        {
+            int userId = int.Parse(data.list[0]);
+            int serverId = int.Parse(data.list[1]);
+            int entityId = int.Parse(data.list[2]);
+
+            BattleServer bs = ServerManager.Instance.GetServer(serverId);
+            if (bs != null)
+            {
+                bs.Attack(userId, entityId);
+            }
         }
     }
 }

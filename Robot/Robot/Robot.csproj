@@ -38,11 +38,9 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tools">
-      <HintPath>..\..\lib\Tools.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleManager.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="Network.cs" />
     <Compile Include="Program.cs" />
@@ -56,6 +54,10 @@
     <ProjectReference Include="..\..\Data\Data.csproj">
       <Project>{b4f4fb8d-cd02-4725-a59a-bfdab850036b}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tools\Tools.csproj">
+      <Project>{ce59b5c0-988f-43d3-b355-cc0f8059e2a0}</Project>
+      <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

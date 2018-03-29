@@ -98,14 +98,14 @@ namespace GameServer
                 if (roles.Count > 0) role = roles[0];
 
                 if (role != null)
-                    roleDic[role.roleId] = role;
+                    roleDic[role.id] = role;
             }
             return role;
         }
         public bool RoleIsExisting(string roleName)
         {
             string where = string.Format("roleName = '{0}'", roleName);
-            var roles = MySqlTemplate.SELECT<Role>(new string[] { "role" }, new string[] { "*" }, where);
+            var roles = MySqlTemplate.SELECT<Entity>(new string[] { "role" }, new string[] { "*" }, where);
             if (roles.Count < 1)
                 return false;
             
@@ -117,13 +117,13 @@ namespace GameServer
             User user = DataManager.Instance.ReadUser(userId);
             if (user != null)
             {
-                role.roleId = ++settings.nextRoleId;
+                role.id = ++settings.nextRoleId;
 
-                MySqlTemplate.UPDATE("user", new string[] { "roleId" }, new object[] { role.roleId });
+                MySqlTemplate.UPDATE("user", new string[] { "roleId" }, new object[] { role.id });
                 MySqlTemplate.UPDATE("setting", new string[] { "nextRoleId" }, new object[] { settings.nextRoleId });
                 MySqlTemplate.INSERT("role", new string[] { "roleId", "roleName", "level", "exp", "fixedSTR", "fixedDEX", "fixedMAG", "fixedCON", 
                      "potentialSTR", "potentialDEX", "potentialMAG", "potentialCON" }, new object[] {
-                     role.roleId, role.roleName, role.level, role.exp, role.fixedSTR,
+                     role.id, role.name, role.level, role.exp, role.fixedSTR,
                      role.fixedDEX, role.fixedMAG, role.fixedCON, role.potentialSTR, role.potentialDEX,
                      role.potentialMAG, role.potentialCON });
 
