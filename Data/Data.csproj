@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckPoint.cs" />
+    <Compile Include="LevelInfo.cs" />
     <Compile Include="ErrorMessage.cs" />
     <Compile Include="Monster.cs" />
     <Compile Include="Entity.cs" />
@@ -53,6 +53,12 @@
     <Compile Include="Role.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{ce59b5c0-988f-43d3-b355-cc0f8059e2a0}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

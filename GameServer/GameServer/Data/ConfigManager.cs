@@ -13,7 +13,7 @@ namespace GameServer
 
         public Dictionary<int, Role> roleDic = new Dictionary<int, Role>();
         public Dictionary<int, Monster> monsterDic = new Dictionary<int, Monster>();
-        public Dictionary<int, CheckPoint> levelDic = new Dictionary<int, CheckPoint>();
+        public Dictionary<int, LevelInfo> levelDic = new Dictionary<int, LevelInfo>();
 
         public void Init()
         {
@@ -21,6 +21,7 @@ namespace GameServer
             GetMonster();
             GetCheckPoint();
         }
+
         private void GetRoles()
         {
             var list = FileIO.ReadJson<Role>(CONFIG_PATH + "Role");
@@ -39,7 +40,7 @@ namespace GameServer
         }
         private void GetCheckPoint()
         {
-            var list = FileIO.ReadJson<CheckPoint>(CONFIG_PATH + "CheckPoint");
+            var list = FileIO.ReadJson<LevelInfo>(CONFIG_PATH + "LevelInfo");
             foreach (var item in list)
             {
                 levelDic[item.id] = item;
@@ -64,9 +65,9 @@ namespace GameServer
             }
             return ret;
         }
-        public CheckPoint GetCheckPoint(int id)
+        public LevelInfo GetCheckPoint(int id)
         {
-            CheckPoint ret;
+            LevelInfo ret;
             if (!levelDic.TryGetValue(id, out ret))
             {
                 LogManager.Instance.Logger.Error("没有配置 Monster " + id);

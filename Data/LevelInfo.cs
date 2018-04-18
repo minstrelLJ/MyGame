@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Data
 {
-    public class CheckPoint
+    public class LevelInfo
     {
         public int id { get; set; }
         public string levelName { get; set; }

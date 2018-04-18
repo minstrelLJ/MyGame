@@ -27,7 +27,7 @@ E:\GitPro\MyGame\Data\bin\Debug\AsyncSocket.dll
 E:\GitPro\MyGame\Data\bin\Debug\Newtonsoft.Json.dll
 E:\GitPro\MyGame\Data\bin\Debug\Tools.dll
 E:\GitPro\MyGame\Data\bin\Debug\UnityEngine.dll
-E:\GitPro\MyGame\Data\bin\Debug\Common.dll
 E:\GitPro\MyGame\Data\obj\Debug\Data.dll
 E:\GitPro\MyGame\Data\obj\Debug\Data.pdb
 E:\GitPro\MyGame\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+E:\GitPro\MyGame\Data\bin\Debug\Tools.pdb

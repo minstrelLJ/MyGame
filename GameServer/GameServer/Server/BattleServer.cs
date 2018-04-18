@@ -18,7 +18,7 @@ namespace GameServer
 
         public void Init(int levelId)
         {
-            CheckPoint levelConfig = ConfigManager.Instance.GetCheckPoint(levelId);
+            LevelInfo levelConfig = ConfigManager.Instance.GetCheckPoint(levelId);
 
             string[] monsters = levelConfig.monsters.Split('|');
             if (monsters.Length > 0)
