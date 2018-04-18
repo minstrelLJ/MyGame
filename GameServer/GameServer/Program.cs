@@ -19,6 +19,7 @@ namespace GameServer
 
             Init();
 
+
             //MySqlTemplate.AddUser();
 
             Console.ReadLine();
